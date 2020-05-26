@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests, os, json
 
 # the search query given to this URL should be seperated by %20
-URL = "https://www.flipkart.com/search?q={}&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=off&as=off"
+URL = "https://www.flipkart.com/search?q={}"
 
 def search_and_fetch_html(search_words):
     search_query = search_words.strip().replace(" ", "%20")

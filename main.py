@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import requests, os, sys, json
+import requests, os, json
 
 # the search query given to this URL should be seperated by %20
 URL = "https://www.flipkart.com/search?q={}&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=off&as=off"
@@ -43,8 +43,10 @@ def search_items(html_doc):
     print("-"*40)
     return json_list
 
-def main(): # to be tested ;)
-    html_doc = search_and_fetch_html("Dettol")
+def main():
+    search_words = input("Enter item name: ").strip()
+    print("Searching on flipkart...")
+    html_doc = search_and_fetch_html(search_words)
     search_items(html_doc)
 
 if __name__ == "__main__":
